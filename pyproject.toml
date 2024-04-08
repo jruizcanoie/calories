@@ -1,8 +1,8 @@
 [tool.poetry]
 
 name = "calories"
-version = "0.0"
-description = "Sample project generated from Jace's Python Template."
+version = "1.0"
+description = "Algorithms for Data Structures."
 
 packages = [{ include = "calories" }]
 
@@ -17,7 +17,6 @@ repository = "https://github.com/jruizcanoie/calories"
 keywords = [
 ]
 classifiers = [
-    # TODO: update this list to match your application: https://pypi.org/pypi?%3Aaction=list_classifiers
     "Development Status :: 1 - Planning",
     "Natural Language :: English",
     "Operating System :: OS Independent",
@@ -28,11 +27,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 
-python = "^1.0"
-
-# TODO: Remove these and add your library's requirements
-click = "*"
-minilog = "*"
+python = "3.10"
 
 [tool.poetry.dev-dependencies]
 
@@ -68,10 +63,6 @@ sniffer = "*"
 MacFSEvents = { version = "*", platform = "darwin" }
 pync = { version = "*", platform = "darwin" }
 ipython = "^7.12.0"
-
-[tool.poetry.scripts]
-
-calories = "calories.cli:main"
 
 [tool.black]
 
