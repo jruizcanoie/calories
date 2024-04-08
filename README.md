@@ -2,6 +2,9 @@
 
 ## Setup
 
+To install this project in edit mode: `pip install -e .`
+
+
 ### Requirements
 
 * Python 3.10+
