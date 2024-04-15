@@ -371,6 +371,8 @@ calories_dataset = {
     "coconut milk": 30,
     "curry powder": 2,
     "tomato": 10,
+    "lemon juice": 2,
+    "red onion": 0.5
 }
 
 price_dataset = {
@@ -453,6 +455,8 @@ price_dataset = {
     "maple syrup": 5,
     "curry powder": 0.50,
     "tomato": 1,
+    "lemon juice":5,
+    "red onion": 2
 }
 
 recipe_ingredients_dataset = {
@@ -678,6 +682,42 @@ def recipe_breakdown(recipes):
     
 #     return matching_keys
 
+def fridge_op(fridge): 
+    
+    answer = input("Would you like to add and item into your fridge? y/n ")
+
+    while answer == "y": 
+        food_name = input("What item would you like to add: (eg: banana) ")
+        food_calorie = float(input("How many calories does the item contain: (eg: 100)" ))
+
+        answer2 = input(f"You want to add {food_name} which has {food_calorie} calories to the fridge? Is this correct? y/n ")
+        
+        if answer2 == "y": 
+            fridge.add_item(food_name,food_calorie)
+            print("Item added! ")
+
+            answer = input("Would you like to add an item into your fridge? y/n ")
+
+        else: 
+            print("Item deleted.")
+            answer = input("Would you like to add an item into your fridge? y/n ")
+    
+    c = fridge.get_items_key()
+    
+    print("These are the items inside of your fridge\n", c)
+
+    cookyes = input("Are you ready to start cooking? y/n ")
+
+    if cookyes == "y": 
+        pass
+    else: 
+        fridge_op(fridge)
+
+
+
+
+
+
 
 def beststringmatch(commonlists, recipes):
     
@@ -767,14 +807,14 @@ def checkitems(recipe, fridge):
 
     print(f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}.")
  
+
+
+
 def main(): 
   
   f = Fridge()
 
-  f.add_item("chicken", 500)
-  f.add_item("beer", 1)
-  f.add_item("rice", 1)
-  f.add_item("onion",1)
+  fridge_op(f)
 
   x = find_recipe(f)
 
@@ -787,6 +827,9 @@ def main():
   test = beststringmatch(c , x)
 
   checkitems(test,f)
+
+
+
 
 main()
     
