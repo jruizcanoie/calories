@@ -228,6 +228,7 @@ def checkitems(recipe, fridge):
 
         if condition is True:
             print(f"You have all the items for {i}")
+            
         else:
             semi_price = 0
             semi_cal = 0
@@ -256,7 +257,7 @@ def checkitems(recipe, fridge):
             missing_val.append(finaltest)
 
     print(
-        f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}."
+        f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}. This will cost you {totalprice[maxeff_index]} euros"
     )
 
 
