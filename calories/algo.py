@@ -227,7 +227,8 @@ def checkitems(recipe, fridge):
                 missing_values.append(y)
 
         if condition is True:
-            print(f"You have all the items for {i}")
+            return(f"You have all the items for {i}")
+            
             
         else:
             semi_price = 0
@@ -256,7 +257,7 @@ def checkitems(recipe, fridge):
         if finaltest not in tupleitems:
             missing_val.append(finaltest)
 
-    print(
+    return(
         f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}. This will cost you {totalprice[maxeff_index]} euros"
     )
 
@@ -277,7 +278,8 @@ def main():
 
     test = beststringmatch(c, x)
 
-    checkitems(test, f)
+    final = checkitems(test, f)
 
+    print(final)
 
 main()
