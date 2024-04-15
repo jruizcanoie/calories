@@ -216,6 +216,7 @@ def checkitems(recipe, fridge):
     totalcal = []
 
     for i in recipe:
+        
         condition = True
 
         missing_values = []
