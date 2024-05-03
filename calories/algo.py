@@ -82,6 +82,7 @@ def find_recipe(user_fridge):
             contains the recipes which can be cooked with the ingredient
     """
     max_fridge = user_fridge.max_cal_cal()
+    max_fridge = float(max_fridge)
 
     if max_fridge < 100:
         print("Find item from grocery store ")
@@ -122,30 +123,45 @@ def recipe_breakdown(recipes):
     return all_ingredients
 
 
-# def stringmatch(commonlists, recipies):
-
-#     matching_keys = []
-
-#     for recipe in recipies:
-#         if recipe in recipe_ingredients_dataset:
-#             recipe_ingredients = recipe_ingredients_dataset[recipe]
-#             for commonlist in commonlists:
-#                 if set(recipe_ingredients).issubset(set(commonlist)):
-#                     matching_keys.append(recipe)
-#                     break
-
-#     return matching_keys
-
-
 def fridge_op(fridge):
 
-    answer = input("Would you like to add and item into your fridge? y/n ")
+    test = 0
+    while test == 0:
+
+        answer = (
+            input("Would you like to add an item into your fridge? (y/n) ")
+            .strip()
+            .lower()
+        )
+
+        if answer == "y" or answer == "n":
+            test = 1
+        else:
+            print(
+                "Please only enter either 'y' or 'n'. No other inputs will be accepted"
+            )
 
     while answer == "y":
-        food_name = input("What item would you like to add: (eg: banana) ")
-        food_calorie = float(
-            input("How many calories does the item contain: (eg: 100)")
+
+        food_name = (
+            input("What item would you like to add: (eg: banana) ").strip().lower()
         )
+
+        if any(character.isdigit() for character in food_name):
+            print(
+                "Invalid input. Item deleted. Please do not enter numbers or any special symbols!"
+            )
+            continue
+
+        food_calorie = input("How many calories does the item contain: (eg: 100)")
+
+        try:
+            food_calorie_float = float(food_calorie)
+        except ValueError:
+            print(
+                "Invalid input. Item deleted. Please make sure that only numbers are placed when the program asks for calories!"
+            )
+            continue
 
         answer2 = input(
             f"You want to add {food_name} which has {food_calorie} calories to the fridge? Is this correct? y/n "
@@ -216,7 +232,7 @@ def checkitems(recipe, fridge):
     totalcal = []
 
     for i in recipe:
-        
+
         condition = True
 
         missing_values = []
@@ -228,9 +244,8 @@ def checkitems(recipe, fridge):
                 missing_values.append(y)
 
         if condition is True:
-            return(f"You have all the items for {i}")
-            
-            
+            return f"You have all the items for {i}"
+
         else:
             semi_price = 0
             semi_cal = 0
@@ -258,9 +273,7 @@ def checkitems(recipe, fridge):
         if finaltest not in tupleitems:
             missing_val.append(finaltest)
 
-    return(
-        f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}. This will cost you {totalprice[maxeff_index]} euros"
-    )
+    return f"You should cook {recipe[maxeff_index]}. However, you are missing {missing_val}. This will cost you {totalprice[maxeff_index]} euros"
 
 
 def main():
@@ -282,5 +295,6 @@ def main():
     final = checkitems(test, f)
 
     print(final)
+
 
 main()
