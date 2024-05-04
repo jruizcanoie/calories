@@ -297,4 +297,3 @@ def main():
     print(final)
 
 
-main()

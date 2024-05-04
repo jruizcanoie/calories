@@ -49,6 +49,10 @@ To install this project in edit mode: `pip install -e .`
 
 * Python 3.10+
 
+### How to build 
+
+Simply run `poetry build` and the wheels will be located in the `dist` directory.  The file with extension `whl` is a wheel instalation file that you could use to setup a different virtual environment by running `pip install calories-1.0-py3-none-any.whl`.
+
 ### Installation
 
 Install it directly into an activated virtual environment:

@@ -25,6 +25,10 @@ classifiers = [
     "Programming Language :: Python :: 1.0",
 ]
 
+
+[tool.poetry.scripts]
+calories = "calories:main"
+
 [tool.poetry.dependencies]
 
 python = "3.10.5"
