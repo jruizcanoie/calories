@@ -62,3 +62,14 @@ Simply run `poetry build` and the wheels will be located in the `dist` directory
 ## Usage
 
 After installation, simply write `calories` in the command line and the program will run. 
+
+
+## Credits: 
+
+Justo Ruiz Cano 
+
+Javier Alonso 
+
+Nicolas Loescher Montal 
+
+Paul Coyral 
