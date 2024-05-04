@@ -295,5 +295,3 @@ def main():
     final = checkitems(test, f)
 
     print(final)
-
-
