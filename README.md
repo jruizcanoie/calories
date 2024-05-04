@@ -46,9 +46,9 @@ Our algorithm uses hash tables for faster usage. They are all created by us and 
 
 
 ## Setup
+You will need a valid python installation in your machine to run this project in development form.  After checking out the project through the usual `git checkout https://github.com/jruizcanoie/calories.git` and creating a virtual environment to isolate this project from your main python installation (recommended, but not necessary), do simply execute `pip install -e .` to install this project in edit mode.
 
-To install this project in edit mode: `pip install -e .`
-
+When the project is install either in edit mode or through a conventional `pip install` command (see Build section below), a command line script called `calories` will be able at terminal to execute the program.
 
 ### Requirements
 
@@ -56,7 +56,7 @@ To install this project in edit mode: `pip install -e .`
 
 ### How to build 
 
-Simply run `poetry build` and the wheels will be located in the `dist` directory.  The file with extension `whl` is a wheel instalation file that you could use to setup a different virtual environment by running `pip install calories-1.0-py3-none-any.whl`.
+Simply run `poetry build` and the wheels will be located in the `dist` directory.  The file with extension `whl` is a wheel installation file that you could use to setup a different virtual environment by running `pip install calories-1.0-py3-none-any.whl`.
 
 
 ## Usage
@@ -66,10 +66,7 @@ After installation, simply write `calories` in the command line and the program 
 
 ## Credits: 
 
-Justo Ruiz Cano 
-
-Javier Alonso 
-
-Nicolas Loescher Montal 
-
-Paul Coyral 
+* Justo Ruiz Cano 
+* Javier Alonso 
+* Nicolas Loescher Montal 
+* Paul Coyral 

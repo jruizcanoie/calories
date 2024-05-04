@@ -54,7 +54,7 @@ class ShopItem:
 
     It is modeled as a data class since there is no more
     logic than the actual values we are interested from
-    the prespective of the algorithm.
+    the perspective of the algorithm.
     """
 
     name: str
@@ -68,9 +68,9 @@ class ShopItem:
 def find_recipe(user_fridge):
     """
     Given the items inside of the users fridge, we find the one with the most calories
-    If it doesnt pass a condition, we go to the grocery store (TO be continued)
+    If it doesn't pass a condition, we go to the grocery store (TO be continued)
 
-    If it does, we then check against the ingredients_recipe_dataset to find the recepies
+    If it does, we then check against the ingredients_recipe_dataset to find the recipes
     that can be made with the ingredient
 
     Args:
@@ -97,7 +97,7 @@ def find_recipe(user_fridge):
 def mostcom(reference, tocheck):
     """
     This function finds the commonalities between the two inputted lists
-    It will return the recepies with the most common items inside of the fridge
+    It will return the recipes with the most common items inside of the fridge
     This is done to use as many fridge items as possible
     """
     max_common = 0
@@ -114,7 +114,7 @@ def mostcom(reference, tocheck):
 
 def recipe_breakdown(recipes):
     """
-    Accesses the recepies dictionary so the recipies are able to be broken down
+    Accesses the recipes dictionary so the recipes are able to be broken down
     """
     all_ingredients = []
     for i in recipes:
@@ -191,7 +191,7 @@ def fridge_op(fridge):
 
 def beststringmatch(commonlists, recipes):
     """
-    Finds the best match between ingredients and the recepies
+    Finds the best match between ingredients and the recipes
     """
     matching_keys = []
 
