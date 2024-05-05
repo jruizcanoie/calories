@@ -63,6 +63,11 @@ Simply run `poetry build` and the wheels will be located in the `dist` directory
 
 After installation, simply write `calories` in the command line and the program will run. 
 
+IMPORTANT: Some ingredients may not exist in the datasets and therefore the program will not be able to run. 
+We recommend to try first the following ingredients to make sure the program is installed correctly: Bread, butter. The program should return Grilled cheese as a recipe. 
+
+Note: Since we want the recipes to be nutritious, at least one of the ingredients added by the user must be over 100 calories.  Otherwise the program will return to buy ingredients at the store. We made it this way to make sure the recipe had some sort of nutritious base (such as pasta, meat etc..). 
+
 
 ## Credits: 
 
